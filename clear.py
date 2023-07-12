@@ -1,3 +1,5 @@
+# USE THIS FILE TO CLEAR GPU CACHE
+
 import gc
 import torch
 # def report_gpu():

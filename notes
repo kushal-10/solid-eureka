@@ -1,0 +1,74 @@
+GPT2-XL : 1024 tokens, trained on subreddits
+
+Google T5 series 512 tokens
+
+Meta's OPT 2048 tokens
+
+The Meta AI team wanted to train this model on a corpus as large as possible. It is composed of the union of the following 5 filtered datasets of textual documents:
+
+    BookCorpus, which consists of more than 10K unpublished books,
+
+The GALACTICA models are trained on a large-scale scientific corpus. The models are designed to perform scientific tasks, 
+including but not limited to citation prediction, scientific QA, mathematical reasoning, summarization, document generation, 
+molecular property prediction and entity extraction. 
+
+
+Output:
+Value at  1
+1. Use trucks for last-mile delivery. If heavy-duty
+trucks replace regular-size delivery vans for inbound-
+stage trucking, Figure 2(b) shows that ﬁve
+more areas favor shared mobility, and Table 2 shows
+that the total operating cost of the shared-mobility
+system decreases by 12.6% from the baseline and
+becomes less than the total operating cost of the truck-
+only system. This is because,
+
+Value at  2
+The best way to reduce emissions in last-mile supply chain is to
+increase the carbon cost recovery rates. The carbon cost
+recovery rates are the sum of the consumers’ total net
+utilities and the retailers’ total proﬁts less the portion
+of carbon cost that is not recovered from the consum-
+ers and retailers. The carbon cost recovery rates are
+the sum of the consumers’ total netutilities and the
+retailers�
+
+Value at  3
+The best way to reduce emissions in last-mile supply chain is to
+increase the density of stores. The density of stores
+is a critical factor in reducing emissions. The density of
+stores is a critical factor in reducing emissions. The density
+of stores is a critical factor in reducing emissions. The density
+of stores is a critical factor in reducing emissions. The density
+of stores is a critical factor in reducing emissions. The density
+of stores is a critical factor in reducing emissions.
+
+Value at  4
+The best way to reduce emissions in last-mile supply chain
+is to reduce the number of vehicles in the supply chain
+by reducing the number of vehicles in the supply chain.
+The most effective way to reduce emissions in last-mile supply chain
+is to reduce the number of vehicles in the supply chain by
+reducing the number of vehicles in the supply chain.
+The most effective way to reduce emissions in last-mile supply chain
+is to reduce the number of vehicles in the supply
+
+
+Summarizer output:
+
+Value at  1
+Table 1 shows the cost-savings of using trucks for last-mile delivery.
+Value at  2
+The last-mile supply chain is one of the largest emitters of greenhouse gases.
+Value at  3
+The best way to reduce emissions in last-mile supply chain is to increase the density of stores.
+Value at  4
+The best way to reduce emissions in last-mile supply chain is to reduce the number of vehicles in the supply chain by reducing the number of vehicles in the supply chain.
+
+Next Steps (11/07/2023): 
+Summarizer did not work : 
+Eliminate repetitive answers
+Galactica training/tuning
+Prompts + data
+Cross questioning
