@@ -22,6 +22,11 @@ python3 main.py --docs
 python3 main.py --rgpipeline
 ```
 
+If CUDA out of memory error occurs, use the following script to clear GPU cache:
+```
+python3 clear.py
+```
+
 ## Results
 
 Result of an example question, which can be changed in main.py

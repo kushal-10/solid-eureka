@@ -1,6 +1,6 @@
 import argparse
-from retriever import generate_docs
-from pipeline import rg_pipeline
+from rgpipe.retriever import generate_docs
+from rgpipe.pipeline import rg_pipeline
 
 
 def main():
