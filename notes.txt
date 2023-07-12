@@ -1,0 +1,14 @@
+GPT2-XL : 1024 tokens, trained on subreddits
+
+Google T5 series 512 tokens
+
+Meta's OPT 2048 tokens
+
+The Meta AI team wanted to train this model on a corpus as large as possible. It is composed of the union of the following 5 filtered datasets of textual documents:
+
+    BookCorpus, which consists of more than 10K unpublished books,
+
+The GALACTICA models are trained on a large-scale scientific corpus. The models are designed to perform scientific tasks, 
+including but not limited to citation prediction, scientific QA, mathematical reasoning, summarization, document generation, 
+molecular property prediction and entity extraction. 
+
