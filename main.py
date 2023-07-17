@@ -1,6 +1,6 @@
 import argparse
-from rgpipe.retriever import generate_docs
-from rgpipe.pipeline import rg_pipeline
+from hay.retriever import generate_docs
+from hay.pipeline import rg_pipeline
 
 
 def main():

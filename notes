@@ -67,8 +67,14 @@ Value at  4
 The best way to reduce emissions in last-mile supply chain is to reduce the number of vehicles in the supply chain by reducing the number of vehicles in the supply chain.
 
 Next Steps (11/07/2023): 
-Summarizer did not work : 
+Summarizer did not work : Add a reader node?
+Shift to galactica
+
 Eliminate repetitive answers
+
+Use langchain/llamaindex   
+
+
 Galactica training/tuning
 Prompts + data
 Cross questioning
