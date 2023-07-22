@@ -28,7 +28,7 @@ def main():
         '''
         Use this argument to run the base retriever generator pipeline
         '''
-        question = "What are the main topics from all these papers"
+        question = "How to reduce emissions?"
         rg_pipeline(question)
 
     return None

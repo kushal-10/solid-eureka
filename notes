@@ -78,3 +78,7 @@ Use langchain/llamaindex
 Galactica training/tuning
 Prompts + data
 Cross questioning
+
+Documentation
+
+Base galactica/opt -> 1.3B
