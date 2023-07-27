@@ -16,10 +16,15 @@ After cloning this repository, two functionalities are provided.
 python3 main.py --docs
 ```
 
-2) Running the whole retriever generator pipeline and print the output
+2) Running the retriever generator pipeline and print the output
 
 ```
 python3 main.py --rgpipeline
+```
+3) Running the retriever summarizer pipeline and print the output
+
+```
+python3 main.py --rspipeline
 ```
 
 If CUDA out of memory error occurs, use the following script to clear GPU cache:
