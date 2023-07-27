@@ -1,5 +1,5 @@
-from hay.model import prompting_model
-from haystack.pipelines import Pipeline
+from hay.model import prompting_model, summarize
+from haystack.pipelines import Pipeline, SearchSummarizationPipeline
 from hay.retriever import retriever1
 
 def rg_pipeline(question):
@@ -20,6 +20,27 @@ def rg_pipeline(question):
         print("Value at  " + str(i))
         print(output["results"][i])
 
+    return None
+
+
+def rs_pipeline(question):
+    '''
+    Defines a pipeline of retriever and summarizer and generates output for the given question
+    '''
+
+    retriever = retriever1()
+    summarizer = summarize()
+
+    # Get top 10 results from the retriever and summarize them
+    pipeline = SearchSummarizationPipeline(summarizer=summarizer, retriever=retriever)
+    result = pipeline.run(query=question, params={"Retriever": {"top_k": 10}})
+
+    output = ''
+    for i in range(len(result['documents'])):
+        output += result['documents'][i].meta['summary']
+
+    print(output)
+    
     return None
 
 

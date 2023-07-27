@@ -18,18 +18,16 @@ def prompting_model():
     return prompt_node
 
 
-def summ(context):
+def summarize():
 
     '''
     Use a summarizer node, to summarize the output of generator
     To remove redundancy/repitition
     '''
-    docs = [Document(context)]
 
-    summarizer = TransformersSummarizer(model_name_or_path="google/pegasus-xsum", max_length=40)
-    summary = summarizer.predict(documents=docs)
+    summarizer = TransformersSummarizer(model_name_or_path="google/pegasus-xsum")
 
-    return summary
+    return summarizer
 
 
 
