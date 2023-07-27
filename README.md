@@ -27,6 +27,12 @@ python3 main.py --rgpipeline
 python3 main.py --rspipeline
 ```
 
+4) Running the chatbot application on LocalHost (7860)
+
+```
+python3 main.py --gradio
+```
+
 If CUDA out of memory error occurs, use the following script to clear GPU cache:
 ```
 python3 clear.py

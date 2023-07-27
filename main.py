@@ -1,6 +1,7 @@
 import argparse
 from hay.retriever import generate_docs
 from hay.pipeline import rg_pipeline, rs_pipeline
+from app import application
 
 
 def main():
@@ -18,6 +19,11 @@ def main():
 
     parser.add_argument(
         '--rspipeline', dest='rspipeline',
+        action='store_true'
+    )
+
+    parser.add_argument(
+        '--gradio', dest='gradio',
         action='store_true'
     )
 
@@ -42,7 +48,14 @@ def main():
         '''
 
         question = "How to reduce emissions in last mile supply chain?"
-        rs_pipeline(question)        
+        rs_pipeline(question)     
+
+    if args.gradio:
+        '''
+        Use this argument to run the application
+        '''   
+
+        application()
 
     return None
 
