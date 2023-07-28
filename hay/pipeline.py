@@ -39,9 +39,9 @@ def rs_pipeline(question):
     for i in range(len(result['documents'])):
         output += result['documents'][i].meta['summary']
 
-    print(output)
+    # print(output)
     
-    return None
+    return output
 
 
 

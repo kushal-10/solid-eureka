@@ -48,13 +48,13 @@ def main():
         '''
 
         question = "How to reduce emissions in last mile supply chain?"
-        rs_pipeline(question)     
+        answer = rs_pipeline(question)     
+        print(answer)
 
     if args.gradio:
         '''
         Use this argument to run the application
         '''   
-
         application()
 
     return None
