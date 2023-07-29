@@ -33,7 +33,7 @@ def rs_pipeline(question):
 
     # Get top 10 results from the retriever and summarize them
     pipeline = SearchSummarizationPipeline(summarizer=summarizer, retriever=retriever)
-    result = pipeline.run(query=question, params={"Retriever": {"top_k": 10}})
+    result = pipeline.run(query=question, params={"Retriever": {"top_k": 5}})
 
     output = ''
     for i in range(len(result['documents'])):

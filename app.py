@@ -2,7 +2,6 @@
 
 import gradio as gr
 import time
-import random
 from hay.pipeline import rs_pipeline
 
 with gr.Blocks() as chat:
