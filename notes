@@ -15,8 +15,13 @@ Use langchain/llamaindex
 
 Steps to link HF space with github
 
-Add HF space to remote
-git remote add space https://huggingface.co/spaces/HF_USERNAME/SPACE_NAME
-git push --force space main
+make sure git lfs is installed
+git clone repo
+in repo use:
+git lfs track "*.pdf" (example)
+git add .
+git commit -m "message"
+git push
+(Use all from terminal, no need for vsc)
 
-(Remove everything >10Mb)
+Runtime Error -> Remove parse args
