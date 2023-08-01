@@ -25,3 +25,7 @@ git push
 (Use all from terminal, no need for vsc)
 
 Runtime Error -> Remove parse args
+
+Try on new data/ update results
+Try on gradio (uses memory, so maybe it'll work)
+Try converational agent

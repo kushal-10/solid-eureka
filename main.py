@@ -1,6 +1,6 @@
 import argparse
 from hay.retriever import generate_docs
-from hay.pipeline import rg_pipeline, rs_pipeline
+from hay.pipeline import rg_pipeline, rs_pipeline, rsg_pipeline
 from app import application
 
 
@@ -19,6 +19,11 @@ def main():
 
     parser.add_argument(
         '--rspipeline', dest='rspipeline',
+        action='store_true'
+    )
+
+    parser.add_argument(
+        '--conv', dest='conv',
         action='store_true'
     )
 
@@ -51,6 +56,13 @@ def main():
         answer = rs_pipeline(question)     
         print(answer)
 
+    if args.conv:
+        '''
+        Use this argument to run the pipeline using conversational agent class
+        '''
+        op = rsg_pipeline()
+        print(op)
+    
     if args.gradio:
         '''
         Use this argument to run the application
