@@ -46,8 +46,8 @@ with gr.Blocks(theme=gr.themes.Soft(primary_hue="emerald", neutral_hue="slate"))
     gr.HTML(description)
 
 def application():
-    return None
+    # return None
 
-chat.queue()
-chat.launch()
+    chat.queue()
+    chat.launch()
 
