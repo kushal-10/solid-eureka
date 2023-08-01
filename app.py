@@ -5,7 +5,7 @@ import time
 from hay.pipeline import rs_pipeline
 
 title = """<h1 align="center">Chat Literature</h1>"""
-description = """<br><br><h3 align="center">This is a literature chat model, which can currently answer questions to regulation topic in Supply chain mangement.</h3>"""
+description = """<br><br><h3 align="center">This is a literature chat model, which can currently answer questions to regulation/two-sided markets topic in Supply chain mangement.</h3>"""
 
 def user(user_message, history):
     return "", history + [[user_message, None]]
@@ -37,17 +37,24 @@ with gr.Blocks(theme=gr.themes.Soft(primary_hue="emerald", neutral_hue="slate"))
     msg.submit(respond, [msg, chatbot], [msg, chatbot])
 
 
+    # gr.Examples([
+    #     ["How to reduce carbon emissions?"],
+    #     ["What are the main topics in these papers?"],
+    #     ["What are the major math models in PI."]
+    # ], inputs=msg, label= "Click on any example to copy in the chatbox"
+    #   )
+    
     gr.Examples([
-        ["How to reduce carbon emissions?"],
-        ["What are the main topics in these papers?"],
-        ["What are the major math models in PI."]
+        ["Who are the main users (participants) in the two-sided market?"],
+        ["What are the decisions made in the two-sided market? And who makes this decision?"],
+        ["What are the main effects in the two-sided market"]
     ], inputs=msg, label= "Click on any example to copy in the chatbox"
       )
     gr.HTML(description)
 
 def application():
-    # return None
+    return None
 
-    chat.queue()
-    chat.launch()
+chat.queue()
+chat.launch()
 

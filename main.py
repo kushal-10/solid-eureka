@@ -51,8 +51,10 @@ def main():
         '''
         Use this argument to run the retriever summarizer pipeline
         '''
-
-        question = "How to reduce emissions in last mile supply chain?"
+        question = "Who are the main users in the two-sided market"
+        # question = "What are the decisions made in the two-sided market? And who makes this decision? "
+        # question = "What are the main effects in the two-sided market?"
+        # question = "What are the main topics in these papers?"
         answer = rs_pipeline(question)     
         print(answer)
 

@@ -1,0 +1,60 @@
+{
+  "citation": "",
+  "description": "",
+  "features": {
+    "id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "content": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "content_type": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "meta": {
+      "_split_id": {
+        "dtype": "int64",
+        "_type": "Value"
+      },
+      "_split_overlap": [
+        {
+          "doc_id": {
+            "dtype": "string",
+            "_type": "Value"
+          },
+          "range": {
+            "feature": {
+              "dtype": "int64",
+              "_type": "Value"
+            },
+            "_type": "Sequence"
+          }
+        }
+      ],
+      "name": {
+        "dtype": "string",
+        "_type": "Value"
+      }
+    },
+    "id_hash_keys": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "score": {
+      "dtype": "null",
+      "_type": "Value"
+    },
+    "embedding": {
+      "dtype": "null",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": ""
+}

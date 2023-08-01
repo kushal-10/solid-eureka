@@ -24,7 +24,7 @@ def generate_docs(overlap, length):
     Takes in split length and split overlap
     Saves the docs in a pandas dataframe
     '''
-    all_docs = convert_files_to_docs(dir_path='data')
+    all_docs = convert_files_to_docs(dir_path='data2')
 
     preprocessor = PreProcessor(
         clean_empty_lines=True,
@@ -42,7 +42,8 @@ def generate_docs(overlap, length):
 
     df = pd.DataFrame(docs)
     dataset = Dataset(pa.Table.from_pandas(df))
-    dataset.save_to_disk('outputs/docs-dataset')
+    # dataset.save_to_disk('outputs/docs-dataset')
+    dataset.save_to_disk('outputs/docs-dataset-2')
 
     return None
 
@@ -52,12 +53,13 @@ def retriever1():
     Use BM25 Retriever to retrieve data
     '''
 
-    dataset = load_from_disk('outputs/docs-dataset')
+    # dataset = load_from_disk('outputs/docs-dataset')
+    dataset = load_from_disk('outputs/docs-dataset-2')
 
     # BM25Retriever with InMemoryDocumentStore
     document_store = InMemoryDocumentStore(use_bm25=True)
     document_store.write_documents(dataset)
-    retriever = BM25Retriever(document_store=document_store, top_k=5)
+    retriever = BM25Retriever(document_store=document_store, top_k=10)
 
     return retriever
 
