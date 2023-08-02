@@ -3,6 +3,7 @@ from hay.retriever import generate_docs
 from hay.pipeline import rg_pipeline, rs_pipeline, rsg_pipeline
 from app import application
 
+d = 'data'
 
 def main():
     parser = argparse.ArgumentParser()
@@ -38,14 +39,14 @@ def main():
         '''
         Use this argument to generate the docs and store in DOCUMENT format
         '''
-        generate_docs(overlap=10, length=100)
+        generate_docs(overlap=10, length=100, d=d)
 
     if args.rgpipeline:
         '''
         Use this argument to run the base retriever generator pipeline
         '''
         question = "How to reduce emissions?"
-        rg_pipeline(question)
+        rg_pipeline(question, d)
 
     if args.rspipeline:
         '''
@@ -55,7 +56,7 @@ def main():
         # question = "What are the decisions made in the two-sided market? And who makes this decision? "
         # question = "What are the main effects in the two-sided market?"
         # question = "What are the main topics in these papers?"
-        answer = rs_pipeline(question)     
+        answer = rs_pipeline(question, d)     
         print(answer)
 
     if args.conv:

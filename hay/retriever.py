@@ -18,13 +18,14 @@ from haystack.nodes import TfidfRetriever
 import warnings
 warnings.filterwarnings('ignore')
 
-def generate_docs(overlap, length):
+def generate_docs(overlap, length, d='data'):
 
     '''
     Takes in split length and split overlap
     Saves the docs in a pandas dataframe
     '''
-    all_docs = convert_files_to_docs(dir_path='data2')
+
+    all_docs = convert_files_to_docs(dir_path=d)
 
     preprocessor = PreProcessor(
         clean_empty_lines=True,
@@ -43,18 +44,18 @@ def generate_docs(overlap, length):
     df = pd.DataFrame(docs)
     dataset = Dataset(pa.Table.from_pandas(df))
     # dataset.save_to_disk('outputs/docs-dataset')
-    dataset.save_to_disk('outputs/docs-dataset-2')
+    dataset.save_to_disk('outputs/docs-'+d)
 
     return None
 
 
-def retriever1():
+def retriever1(d):
     '''
     Use BM25 Retriever to retrieve data
     '''
 
     # dataset = load_from_disk('outputs/docs-dataset')
-    dataset = load_from_disk('outputs/docs-dataset-2')
+    dataset = load_from_disk('outputs/docs-'+d)
 
     # BM25Retriever with InMemoryDocumentStore
     document_store = InMemoryDocumentStore(use_bm25=True)
@@ -62,17 +63,3 @@ def retriever1():
     retriever = BM25Retriever(document_store=document_store, top_k=10)
 
     return retriever
-
-
-# def retriever2():
-#     document_store = FAISSDocumentStore(similarity="dot_product")
-#     retriever = DensePassageRetriever(
-#         document_store=document_store,
-#         query_embedding_model="facebook/dpr-question_encoder-single-nq-base",
-#         passage_embedding_model="facebook/dpr-ctx_encoder-single-nq-base"
-#     )
-#     document_store.update_embeddings(retriever)
-
-#     return retriever
-# generate_docs(20, 250)
-# ret = retriever2()

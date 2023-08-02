@@ -6,13 +6,13 @@ from haystack.agents.memory import ConversationSummaryMemory
 from haystack import Document
 from hay.retriever import retriever1
 
-def rg_pipeline(question):
+def rg_pipeline(question, d):
     '''
     Defines a pipeline of retriever and generator and generates output for the given question
     '''
 
     prompt_node = prompting_model() 
-    retriever = retriever1()
+    retriever = retriever1(d)
 
     pipe = Pipeline()
     pipe.add_node(component=retriever, name="retriever", inputs=["Query"])
@@ -27,17 +27,17 @@ def rg_pipeline(question):
     return None
 
 
-def rs_pipeline(question):
+def rs_pipeline(question, d):
     '''
     Defines a pipeline of retriever and summarizer and generates output for the given question
     '''
 
-    retriever = retriever1()
+    retriever = retriever1(d)
     summarizer = summarize()
 
     # Get top 10 results from the retriever and summarize them
     pipeline = SearchSummarizationPipeline(summarizer=summarizer, retriever=retriever)
-    result = pipeline.run(query=question, params={"Retriever": {"top_k": 10}})
+    result = pipeline.run(query=question, params={"Retriever": {"top_k": 2}})
 
     output = ''
     for i in range(len(result['documents'])):
@@ -60,12 +60,12 @@ def conv_agent(question="How to reduce carbon emissions?"):
     output = None
     return output
 
-def rsg_pipeline(question="How to reduce carbon emissions?"):
+def rsg_pipeline(question, d):
 
     '''
     Defines a pipeline using the summarization pipeline with an additional prompt node
     '''
-    # retriever = retriever1()
+    # retriever = retriever1(d)
     # summarizer = summarize()
     # pipeline = SearchSummarizationPipeline(summarizer=summarizer, retriever=retriever)
     # result = pipeline.run(query=question, params={"Retriever": {"top_k": 5}})
