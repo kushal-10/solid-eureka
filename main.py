@@ -3,7 +3,7 @@ from hay.retriever import generate_docs
 from hay.pipeline import rg_pipeline, rs_pipeline, rsg_pipeline
 from app import application
 
-d = 'data'
+d = 'data2'
 
 def main():
     parser = argparse.ArgumentParser()
@@ -45,14 +45,24 @@ def main():
         '''
         Use this argument to run the base retriever generator pipeline
         '''
-        question = "How to reduce emissions?"
+        question = "What is the reachability problem in the Physical Internet network, and how does it differ from the Digital Internet?"
+
+
         rg_pipeline(question, d)
 
     if args.rspipeline:
         '''
         Use this argument to run the retriever summarizer pipeline
         '''
-        question = "Who are the main users in the two-sided market"
+        # question = "the reachability problem is?"
+        # question = "Does the DI requires significant energy"
+        question = "What does the current model illustrate?"
+
+        # question = "How to solve the Last Mile Problem?"
+        # question = "How to reduce Carbon Emissions?"
+        # question = "What are the main topics of these research papers?"
+
+        # question = "Who are the main users in the two-sided market"
         # question = "What are the decisions made in the two-sided market? And who makes this decision? "
         # question = "What are the main effects in the two-sided market?"
         # question = "What are the main topics in these papers?"
